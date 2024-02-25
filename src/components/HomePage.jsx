@@ -87,10 +87,10 @@ const HomePage = () => {
         </div>
 
 {/* image Card section */}
-<div className="grid grid-cols-2 md:grid-cols-4 gap-2 text-gray-700 bg-white shadow-md bg-clip-border rounded-xl w-full">
+<div className="grid grid-cols-2 md:grid-cols-4 gap-2 text-gray-700 bg-slate-700 shadow-md bg-clip-border w-full">
   {response.map((val) => {
     return (
-      <div key={val.id} className="md:col-span-1 relative mx-4 mt-4 overflow-hidden text-gray-700 bg-white shadow-lg bg-clip-border rounded-xl">
+      <div key={val.id} className="md:col-span-1 relative mx-4 mt-4 overflow-hidden text-gray-700 bg-white shadow-lg bg-clip-border rounded-xl transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-125 duration-300 ">
         <a href={val.urls.regular} title={val.description} >
           <img
             src={val.urls.regular}
