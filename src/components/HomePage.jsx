@@ -27,15 +27,20 @@ const HomePage = () => {
   };
 
   const downloadHandler = () =>{
-
+  
   }
 
   const handelSubmit = (e) => {
     e.preventDefault();
+    if (text.current.value.length === 0){
+      console.log("Please enter something")
+      return;
+    }
+    // console.log(text.current.value.length);
     fetchRequest();
     // console.log(text.current.value)
-  };
-
+    console.log("Form Submitted");
+  }
   // console.log(import.meta.env.VITE_API_KEY)
   return (
     <>
@@ -96,7 +101,7 @@ const HomePage = () => {
             src={val.urls.regular}
             alt={val.alt_description}
             className="w-full h-auto"
-            style={{ height: "200px" }} // Set a fixed height for image container
+            style={{ objectFit: "cover", width: "100%", height: "100%"  }} // Set a fixed height for image container
           />
         </a>
       </div>
