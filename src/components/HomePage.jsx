@@ -96,7 +96,7 @@ const HomePage = () => {
   {response.map((val) => {
     return (
       <div key={val.id} className="md:col-span-1 relative mx-4 mt-4 overflow-hidden text-gray-700 bg-white shadow-lg bg-clip-border rounded-xl transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-125 duration-300 ">
-        <a href={val.urls.regular} title={val.description} >
+        <a href={val.links.download} title={val.description} download={val.links.download}>
           <img
             src={val.urls.regular}
             alt={val.alt_description}
