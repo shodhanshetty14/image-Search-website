@@ -17,12 +17,12 @@ const HomePage = () => {
   const fetchRequest = async () => {
     try {
         const { data } = await axios.get(`${API_URL}?query=${text.current.value}&page=${1}&per_page=${IMAGES_PER_PAGES}&client_id=${import.meta.env.VITE_API_KEY}`)
-        // console.log(data, "fetch result func");
+
         setResponse(data.results)
-        setTotalPages(data.total_pages)
+        // setTotalPages(data.total_pages)
 
     } catch (error) {
-        console.log(error)
+        // console.log(error)
     }
   };
 
@@ -32,16 +32,11 @@ const HomePage = () => {
 
   const handelSubmit = (e) => {
     e.preventDefault();
-    if (text.current.value.length === 0){
-      console.log("Please enter something")
-      return;
-    }
-    // console.log(text.current.value.length);
+
     fetchRequest();
-    // console.log(text.current.value)
-    console.log("Form Submitted");
+
   }
-  // console.log(import.meta.env.VITE_API_KEY)
+
   return (
     <>
       <div className="mx-auto">
@@ -76,6 +71,7 @@ const HomePage = () => {
                     placeholder="Enter your prompt..."
                     ref={text}
                     className=" px-5 w-full rounded-md rounded-r-none"
+                    required
                   />
                   <button
                     type="submit"
